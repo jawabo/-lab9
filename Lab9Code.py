@@ -7,6 +7,27 @@ def encode(password):
     for i in range(len(password)):
         ting += str(ans[i])
     return(ting)
+    
+def decode(encoded_password):
+        after = []
+        for i in range (0,len(encoded_password)):
+            num = int(encoded_password[i])
+            if num >=3:
+                after.append(num)
+            else:
+                if num == 0:
+                    new_num = 10
+                    after.append(new_num)
+                elif num == 1:
+                    new_num = 11
+                    after.append(new_num)
+                elif num == 2:
+                    new_num = 12
+                    after.append(new_num)
+        updated = [str(x-3) for x in after]
+        revert = "" 
+        return revert.join(x for x in updated)
+
 
 while True:
     print("Menu")
